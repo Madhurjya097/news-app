@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 export default class Navbar extends Component {
     render() {
-      console.log(process.env.PUBLIC_URL)
+
         return (
             <>
 <nav className="  navbar navbar-expand-lg bg-primary data"  data-bs-theme="dark">

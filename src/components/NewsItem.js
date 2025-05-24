@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-const news_image = "news-app/news_card_image.jpg"
+
 
 
 export default class NewsItem extends Component {
@@ -9,10 +9,14 @@ export default class NewsItem extends Component {
   }
 
   render() {
+     
     let { title, content } = this.props
     return (
       <>
-        <div className="card" style={{ width: "18rem" }}>
+     
+
+
+        <div className="card">
           <img src={`${process.env.PUBLIC_URL}/news_card_image.jpg`} className="card-img-top" alt="..." />
           <div className="card-body">
             <h6>{title}</h6>
@@ -23,3 +27,4 @@ export default class NewsItem extends Component {
     )
   }
 }
+ 
