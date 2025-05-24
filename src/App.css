@@ -56,3 +56,11 @@
   justify-items: center;
 }
 }
+#brand_logo{
+  height: 30px;
+  width: 30px;
+  margin: auto 100px;
+}
+.navbar-brand{
+  margin-left: 10px;
+}
