@@ -13,7 +13,7 @@ export default class NewsItem extends Component {
     return (
       <>
         <div className="card" style={{ width: "18rem" }}>
-          <img src={news_image} className="card-img-top" alt="..." />
+          <img src={`${process.env.PUBLIC_URL}/news_card_image.jpg`} className="card-img-top" alt="..." />
           <div className="card-body">
             <h6>{title}</h6>
             <p className="card-text">{content}</p>

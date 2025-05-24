@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 
 export default class Navbar extends Component {
-
     render() {
+      console.log(process.env.PUBLIC_URL)
         return (
             <>
 <nav className="  navbar navbar-expand-lg bg-primary data"  data-bs-theme="dark">
   <div className="text-light container-fluid">
-    <img id='brand_logo' className='mx-1' src="news-app/logo192.png" alt="Bootstrap" width="30" height="24"/>
+    <img id='brand_logo' className='mx-1' src={`${process.env.PUBLIC_URL}/logo192.png`} alt="Logo" width="30" height="24"/>
     <a className="navbar-brand" href="/">NewsApp</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
