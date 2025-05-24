@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+#gridLayout{
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr );
+  justify-items: center;
+}
+#gridLayout div{
+  margin-right: auto;
+  margin-left: auto;
+}
+@media only screen and (max-width: 1000px) {
+  #gridLayout{
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr );
+  justify-items: center;
+}
+}
