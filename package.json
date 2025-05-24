@@ -35,5 +35,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "\"News APP made from CWH course\"",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "Madhurjya097/news-app"
+  },
+  "author": "Madhurjya097",
+  "license": "ISC"
 }
