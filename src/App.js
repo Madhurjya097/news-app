@@ -19,6 +19,7 @@ export default class App extends Component {
     return (
       <>
         <Navbar title="NewsApp" />
+        
         {/* <div  className="state">The state is {}</div> */}
         <News />
         
