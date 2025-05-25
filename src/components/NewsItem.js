@@ -14,7 +14,7 @@ export default class NewsItem extends Component {
     return (
       <>
         <div className="card">
-          <img src={img_url!==null?img_url:`${process.env.PUBLIC_URL}/default_image.png`} className="card-img-top" alt="..." />
+          <img src={img_url!==null?img_url:`${process.env.PUBLIC_URL}/default_image.png`} className="card-img-top" alt="news_banner" />
           <div className="card-body" >
             <h6>{title}</h6>
             <p className="card-text">{content}</p>

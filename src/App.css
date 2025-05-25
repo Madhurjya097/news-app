@@ -44,7 +44,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  row-gap: 3rem;
+  gap: 1.5rem;
 }
 
 #gridLayout div {
@@ -52,7 +52,7 @@
   margin-left: auto;
 }
 .card{
-  width: 20rem;
+  /* width: 20rem; */
   animation: appearScaled 0.3s linear;
   
 }
@@ -126,4 +126,10 @@
 #heading{
   display: flex;
   justify-content: center;
+}
+#load_caption{
+  font-size: small;
+}
+.pageButtons{
+  margin: 1rem 50px;
 }
