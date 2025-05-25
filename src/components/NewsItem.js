@@ -10,15 +10,15 @@ export default class NewsItem extends Component {
 
   render() {
 
-    let { title, content, url } = this.props
+    let { title, content, url, img_url } = this.props
     return (
       <>
         <div className="card">
-          <img src={`${process.env.PUBLIC_URL}/news_card_image.jpg`} className="card-img-top" alt="..." />
-          <div className="card-body">
+          <img src={img_url!==null?img_url:`${process.env.PUBLIC_URL}/default_image.png`} className="card-img-top" alt="..." />
+          <div className="card-body" >
             <h6>{title}</h6>
             <p className="card-text">{content}</p>
-            <a href={url}  className="btn btn-primary">Read more</a>
+            <a href={url} target='_blank' rel='noreferrer'  className="btn btn-dark">Read more</a>
           </div>
         </div>
       </>

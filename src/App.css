@@ -53,6 +53,22 @@
 }
 .card{
   width: 20rem;
+  animation: appearScaled 0.3s linear;
+  
+}
+
+@keyframes appearScaled {
+  from{
+    opacity: 0;
+    /* scale: 0; */
+    transform: translateY(100px);
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0px);
+  }
+  
 }
 
 @media only screen and (max-width: 1000px) {
@@ -91,4 +107,23 @@
     width: 20rem;
   }
 
+}
+.pageButtons{
+  display: flex;
+  justify-content: space-between;
+}
+#loader h5{
+  display: flex;
+  gap: 20px;
+  /* margin-right: 20px; */
+  align-items: center;
+
+}
+#loader h5 p{
+  margin: auto;
+  margin-left: 0px;
+}
+#heading{
+  display: flex;
+  justify-content: center;
 }
