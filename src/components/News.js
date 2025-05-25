@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
-const api_url = "http://api.mediastack.com/v1/news?access_key=6d0155af0ca3fb657c08a5369011fde8"
+const api_url = "https://api.mediastack.com/v1/news?access_key=6d0155af0ca3fb657c08a5369011fde8"
 
 export default class News extends Component {
     constructor(){
