@@ -34,7 +34,7 @@ export default class News extends Component {
                     <div id="gridLayout">
                         {
 
-                            articles!==null && articles.map((element, index,) => {
+                            articles!==undefined && articles.map((element, index,) => {
                                 let { title, description, url } = element
                                 title = title.slice(0,61) + "..."
                                 description = description.slice(0,170) + "..."
