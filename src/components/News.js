@@ -5,8 +5,8 @@ import NewsItem from './NewsItem'
 // const API_KEY = '7d9471f6d42741ecbfbcb9b7ee6df561'
 
 // let news_json = require('./news.json')
-let shownArticles
-let x
+// let shownArticles
+
 const API_KEY = '7d9471f6d42741ecbfbcb9b7ee6df561';
 const END_POINT = 'top-headlines';
 const category = 'health';
@@ -26,25 +26,25 @@ export default class News extends Component {
     }
     async componentDidMount() {
 
-        let api_url = `https://newsapi.org/v2/${END_POINT}?category=${category}&apiKey=${API_KEY}&page=1`;
+        let api_url = `https://newsapi.org/v2/${END_POINT}?category=${category}&apiKey=${API_KEY}&page=1&pageSize=6`;
         let p = await fetch(api_url)
         let news_json = await p.json()
-        shownArticles = news_json.articles.length
-        console.log(`${shownArticles} are being shown in this page`)
+        // shownArticles = news_json.articles.length
+        // console.log(`${shownArticles} are being shown in this page`)
         this.setState({
             loading: false, // To change
             articles: news_json !== undefined ? news_json.articles : [], // To re-fetch
             processed_till_now: news_json !== undefined ? news_json.totalResults : 0, //Not to change this 
             shownArticles: news_json !== undefined ? news_json.articles.length : 0
         })
-         x = shownArticles.toString().split("").join("")
+
 
     }
     render() {
 
         // console.log(articles)
         const { articles, processed_till_now, loading, currentPage, shownArticles } = this.state
-        console.log(currentPage)
+ 
         const truncate = (str, limit, placeholder) => {
             return str !== null ? str.slice(0, limit) + "..." : `${placeholder} not available`
         }
@@ -53,7 +53,7 @@ export default class News extends Component {
                 loading:true,
                
             })
-            let api_url = `https://newsapi.org/v2/${END_POINT}?category=${category}&apiKey=${API_KEY}&page=${currentPage-1}`;
+            let api_url = `https://newsapi.org/v2/${END_POINT}?category=${category}&apiKey=${API_KEY}&page=${currentPage-1}&pageSize=6`;
             let p = await fetch(api_url)
             let news_json = await p.json()
             this.setState({
@@ -69,7 +69,7 @@ export default class News extends Component {
                 loading:true,
                 currentPage: currentPage !== shownArticles ? currentPage + 1 : currentPage
             })
-            let api_url = `https://newsapi.org/v2/${END_POINT}?category=${category}&apiKey=${API_KEY}&page=${currentPage+1}`;
+            let api_url = `https://newsapi.org/v2/${END_POINT}?category=${category}&apiKey=${API_KEY}&page=${currentPage+1}&pageSize=6`;
             let p = await fetch(api_url)
             let news_json = await p.json()
             this.setState({
@@ -102,19 +102,21 @@ export default class News extends Component {
                     <div id="gridLayout">
                         {
                             !loading && articles.map((element, index) => {
-                                let { title, description, url, urlToImage } = element
+                                let { title, description, url, urlToImage, author, publishedAt } = element
+                                console.log(author)
                                 title = truncate(title, 60, "Title")
                                 description = truncate(description, 170, "Description")
+                                publishedAt = new Date(publishedAt)
                                 // console.log(`Title: ${title} | Content: ${description}`)
-                                return (<NewsItem img_url={urlToImage} title={title} url={url} key={index} content={description} />)
+                                return (<NewsItem img_url={urlToImage} title={title} url={url} key={index} content={description} author={author} date={publishedAt}/>)
                             })
                         }
 
                     </div>
                     <div className="pageButtons">
-                        <button disabled={currentPage === 1} onClick={prev_page} className="btn btn-outline-dark">&larr; Previous</button>
-                        <p>Currently in page {currentPage}</p>
-                        <button disabled={currentPage === Math.ceil(processed_till_now / x)} onClick={next_page} className="btn btn-outline-dark">Next &rarr;</button>
+                        <button disabled={currentPage === 1} onClick={prev_page} className="btn btn-primary">&larr; Previous</button>
+                        <p>Currently in page {currentPage} of {Math.ceil(processed_till_now / 6)}</p>
+                        <button disabled={currentPage === Math.ceil(processed_till_now / 6)} onClick={next_page} className="btn btn-primary">Next &rarr;</button>
                     </div>
 
                 </div>

@@ -94,8 +94,14 @@
 .navbar-brand {
   margin-left: 10px;
 }
+.pageButtons{
+  margin: 1rem 0px;
 
-@media only screen and (max-width: 400px) {
+}
+ h2{
+    text-align: center;
+  }
+@media only screen and (max-width: 500px) {
   #gridLayout {
 
     width: 100%;
@@ -106,11 +112,22 @@
   .card{
     width: 20rem;
   }
+  .pageButtons{
+    font-size: smaller;
+    
+  }
+  .pageButtons p{
+    height: fit-content;
+  }
+  h2{
+    text-align: left;
+  }
 
 }
 .pageButtons{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 #loader h5{
   display: flex;
@@ -130,6 +147,31 @@
 #load_caption{
   font-size: small;
 }
-.pageButtons{
-  margin: 1rem 50px;
+
+
+*{
+  background-color: rgb(33, 8, 54);
+  color: white;
+}
+h6{
+  background-color: rgb(33, 8, 54);
+  color: white;
+}
+nav{
+  background-color: rgb(57, 13, 94);
+}
+nav div, img, ul, li, a{
+  background-color: rgb(57, 13, 94);
+}
+div.card-body{
+  border: 1px solid white;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  border-top: none;
+}
+h5{
+  margin-bottom: 30px;
+}
+small{
+  color: rgb(201, 197, 197);
 }

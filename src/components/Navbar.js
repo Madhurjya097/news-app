@@ -6,7 +6,7 @@ export default class Navbar extends Component {
 
     return (
       <>
-        <nav className="  navbar navbar-expand-lg bg-dark data" data-bs-theme="dark">
+        <nav className="  navbar navbar-expand-lg data" data-bs-theme="dark">
           <div className="text-light container-fluid">
             <img id='brand_logo' className='mx-1' src={`${process.env.PUBLIC_URL}/logo192.png`} alt="Logo" width="30" height="24" />
             <a className="navbar-brand" href="/">NewsApp</a>
@@ -21,8 +21,6 @@ export default class Navbar extends Component {
                 <li className="nav-item">
                   <a className="nav-link" href="/">About</a>
                 </li>
-
-
               </ul>
             </div>
           </div>
